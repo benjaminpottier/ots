@@ -1,6 +1,14 @@
 # ots
 [onetimesecret](https://onetimesecret.com/) API client and cli with [Fire](https://github.com/google/python-fire)
 
+###### Install
+
+```bash
+git clone https://github.com/benjaminpottier/ots.git
+cd ots
+python3 setup.py install
+```
+
 Create an account at onetimesecret.com, then generate an API key.
 
 Store your user and key in `~/.ots` as `user:api_key` and set read-only permissions on the file.
