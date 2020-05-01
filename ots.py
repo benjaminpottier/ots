@@ -90,18 +90,21 @@ class Ots(object):
         attributes = json.loads(r.text)
         return attributes
 
+    
     def retieve_metdata(self, metadata_key):
         """
         metadata_key: the unique key for this metadata.
         """
         pass
 
+    
     def burn_secret(self, metadata_key):
         """      
         metadata_key: the unique key for this metadata.
         """
         pass
 
+    
     def retrieve_recent_metadata(self):
         """
         retreive a list of recent metadata.
