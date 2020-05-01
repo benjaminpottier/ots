@@ -5,11 +5,14 @@ from requests.auth import HTTPBasicAuth
 
 class Ots(object):
 
-    def __init__(self, user, api_key, base_uri='https://onetimesecret.com/api/v1'):
+    def __init__(
+            self,
+            user,
+            api_key,
+            base_uri='https://onetimesecret.com/api/v1'):
         self.user = user
         self.api_key = api_key
         self.base_uri = base_uri
-
 
     def create_secret(self, email, secret, ttl='3600', passphrase=None):
         """
@@ -34,11 +37,10 @@ class Ots(object):
                     password=self.api_key,
                 )
             )
-        except:
+        except BaseException:
             raise
         attributes = json.loads(r.text)
         return attributes
-
 
     def generate_secret(self, email, ttl='3600', passphrase=None):
         """
@@ -61,11 +63,10 @@ class Ots(object):
                     password=self.api_key,
                 )
             )
-        except:
+        except BaseException:
             raise
         attributes = json.loads(r.text)
         return attributes
-
 
     def retrieve_secret(self, secret_key, passphrase=None):
         """
@@ -85,29 +86,25 @@ class Ots(object):
                     password=self.api_key,
                 )
             )
-        except:
+        except BaseException:
             raise
         attributes = json.loads(r.text)
         return attributes
 
-    
     def retieve_metdata(self, metadata_key):
         """
         metadata_key: the unique key for this metadata.
         """
         pass
 
-    
     def burn_secret(self, metadata_key):
-        """      
+        """
         metadata_key: the unique key for this metadata.
         """
         pass
 
-    
     def retrieve_recent_metadata(self):
         """
         retreive a list of recent metadata.
         """
         pass
-
