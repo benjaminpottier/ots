@@ -13,14 +13,16 @@ class Ots(object):
         self.user = user
         self.api_key = api_key
         self.base_uri = base_uri
-        self.auth = HTTPBasicAuth(username=self.user,password=self.api_key)
         
     def _post(self, path, params={}):
         try:
             r = requests.post(
                 f"{self.base_uri}/{path}",
                 params=params,
-                auth=self.auth,
+                auth=HTTPBasicAuth(
+                    username=self.user,
+                    password=self.api_key
+                )
             )
         except:
             raise
