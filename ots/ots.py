@@ -14,7 +14,7 @@ class Ots(object):
         self.api_key = api_key
         self.base_uri = base_uri
 
-    def create_secret(self, email, secret, ttl='3600', passphrase=None):
+    def create_secret(self, secret, email=None, ttl='3600', passphrase=None):
         """
         secret: the secret value which is encrypted before being stored.
         passphrase: a string that the recipient must know to view the secret.
@@ -42,7 +42,7 @@ class Ots(object):
         attributes = json.loads(r.text)
         return attributes
 
-    def generate_secret(self, email, ttl='3600', passphrase=None):
+    def generate_secret(self, email=None, ttl='3600', passphrase=None):
         """
         passphrase: a string that the recipient must know to view the secret.
         ttl: the maximum amount of time, in seconds, that the secret should survive.
