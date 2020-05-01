@@ -3,7 +3,7 @@
 
 Create an account at onetimesecret.com, then generate an API key.
 
-Store your user and key in `~/.ots` as `user:api_key` and set read-only permissions.
+Store your user and key in `~/.ots` as `user:api_key` and set read-only permissions on the file.
 
 Email a random secret.
 
