@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import fire
 from ots import Ots
 
