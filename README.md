@@ -29,8 +29,4 @@ Email a secret to someone.
 otscli.py create_secret "I enjoyed the movie cats!" --email="foo@example.com"
 ```
 
-The secret_key can be used to retrieve a secret from the cli.
-
-```bash
-otscli.py retrieve_secret nhoe1zdl1bvyhp8oj5utsx8mc8t451t
-```
+The above is just an example of something you may want to keep secret. I didn't see Cats.
