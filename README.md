@@ -1,6 +1,10 @@
 # ots
 [onetimesecret](https://onetimesecret.com/) API client and cli with [Fire](https://github.com/google/python-fire)
 
+Create an account at onetimesecret.com, then generate an API key.
+
+Store your user and key in `~/.ots` as `user:api_key` and set read-only permissions.
+
 Email a random secret.
 
 ```bash
