@@ -77,7 +77,7 @@ class Ots(object):
         """
         metadata_key: the unique key for this metadata.
         """
-        pass
+        return self._post(f"private/{metadata_key}/burn")
 
     def retrieve_recent_metadata(self):
         """
