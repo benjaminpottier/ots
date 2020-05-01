@@ -8,13 +8,13 @@ Store your user and key in `~/.ots` as `user:api_key` and set read-only permissi
 Email a random secret.
 
 ```bash
-otscli.py generate_secret "foo@example.com"
+otscli.py generate_secret --email="foo@example.com"
 ```
 
 Email a secret to someone.
 
 ```bash
-otscli.py create_secret "foo@example.com" "I enjoyed the movie cats!"
+otscli.py create_secret "I enjoyed the movie cats!" --email="foo@example.com"
 ```
 
 The secret_key can be used to retrieve a secret from the cli.
