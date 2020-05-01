@@ -1,7 +1,8 @@
 # ots
-onetimesecret API client in Python
+onetimesecret API client and cli with [Fire](https://github.com/google/python-fire)
 
-```python
-ots = Ots('username', 'your-api-key')
+Email a random secret:
+
+```bash
+otscli.py generate_secret "foo@example.com"
 ```
-
