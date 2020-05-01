@@ -1,7 +1,7 @@
 # ots
 [onetimesecret](https://onetimesecret.com/) API client and cli with [Fire](https://github.com/google/python-fire)
 
-###### Install
+## Install
 
 ```bash
 git clone https://github.com/benjaminpottier/ots.git
