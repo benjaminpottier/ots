@@ -30,10 +30,9 @@ class Ots(object):
 
     def create_secret(self, secret, email=None, ttl='3600', passphrase=None):
         """
-        secret: the secret value which is encrypted before being stored.
-        passphrase: a string that the recipient must know to view the secret.
-        ttl: the maximum amount of time, in seconds, that the secret should survive.
-        recipient: an email address.
+        Args:
+            secret (str): the secret value
+            passphrase (str, optional): a passphrase the recipient must know to view the secret
         """
         params = {
             "secret": secret,
@@ -45,9 +44,10 @@ class Ots(object):
 
     def generate_secret(self, email=None, ttl='3600', passphrase=None):
         """
-        passphrase: a string that the recipient must know to view the secret.
-        ttl: the maximum amount of time, in seconds, that the secret should survive.
-        recipient: an email address.
+        Args:
+            ttl (str, optional): time, in seconds, the secret will live for
+            passphrase (str, optional): a passphrase the recipient must know to view the secret
+            recipient (str, optional): email address to recieve secret
         """
         params = {
             "recipient": email,
@@ -58,8 +58,9 @@ class Ots(object):
 
     def retrieve_secret(self, secret_key, passphrase=None):
         """
-        secret_key: the unique key for this secret.
-        passphrase (if required): the passphrase is required only if the secret was create with one.
+        Args:
+            secret_key (str): unique key to retrieve secret
+            passphrase (str, optional): a passphrase the recipient must know to view the secret
         """
         params = {
             "passphrase": passphrase
@@ -68,18 +69,19 @@ class Ots(object):
 
     def retieve_metdata(self, metadata_key):
         """
-        metadata_key: the unique key for this metadata.
+        Args:
+            metadata_key (str): the unique key to retrieve metadata
         """
         return self._post(f"private/{metadata_key}")
 
     def burn_secret(self, metadata_key):
         """
-        metadata_key: the unique key for this metadata.
+        Args:
+            metadata_key (str): the unique key to burn secret
         """
         return self._post(f"private/{metadata_key}/burn")
 
     def retrieve_recent_metadata(self):
         """
-        retreive a list of recent metadata.
         """
         return self._post(f"private/recent")
