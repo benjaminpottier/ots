@@ -13,6 +13,7 @@ class Ots(object):
         self.user = user
         self.api_key = api_key
         self.base_uri = base_uri
+        self.auth = HTTPBasicAuth(username=self.user,password=self.api_key)
 
     def create_secret(self, secret, email=None, ttl='3600', passphrase=None):
         """
@@ -32,10 +33,7 @@ class Ots(object):
             r = requests.post(
                 f"{self.base_uri}/share",
                 params=params,
-                auth=HTTPBasicAuth(
-                    username=self.user,
-                    password=self.api_key,
-                )
+                auth=self.auth,
             )
         except BaseException:
             raise
@@ -58,10 +56,7 @@ class Ots(object):
             r = requests.post(
                 f"{self.base_uri}/generate",
                 params=params,
-                auth=HTTPBasicAuth(
-                    username=self.user,
-                    password=self.api_key,
-                )
+                auth=self.auth,
             )
         except BaseException:
             raise
@@ -81,10 +76,7 @@ class Ots(object):
             r = requests.post(
                 f"{self.base_uri}/secret/{secret_key}",
                 params=params,
-                auth=HTTPBasicAuth(
-                    username=self.user,
-                    password=self.api_key,
-                )
+                auth=self.auth,
             )
         except BaseException:
             raise
