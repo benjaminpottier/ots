@@ -1,5 +1,5 @@
 # ots
-onetimesecret API client and cli with [Fire](https://github.com/google/python-fire)
+[onetimesecret](https://onetimesecret.com/) API client and cli with [Fire](https://github.com/google/python-fire)
 
 Email a random secret.
 
