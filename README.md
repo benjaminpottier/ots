@@ -26,7 +26,7 @@ otscli.py generate_secret --email="foo@example.com"
 Email a secret to someone.
 
 ```bash
-otscli.py create_secret "I enjoyed the movie cats!" --email="foo@example.com"
+otscli.py create_secret "I enjoyed the movie Cats!" --email="foo@example.com"
 ```
 
 The above is just an example of something you may want to keep secret. I didn't see Cats.
