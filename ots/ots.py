@@ -26,8 +26,7 @@ class Ots(object):
             )
         except:
             raise
-        attrs = json.loads(r.text)
-        return attrs
+        return json.loads(r.text)
 
     def create_secret(self, secret, email=None, ttl='3600', passphrase=None):
         """
