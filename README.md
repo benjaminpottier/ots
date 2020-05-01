@@ -6,7 +6,7 @@
 ```bash
 git clone https://github.com/benjaminpottier/ots.git
 cd ots
-python3 setup.py install
+sudo python3 setup.py install
 ```
 
 ## Setup
