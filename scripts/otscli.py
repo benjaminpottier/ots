@@ -5,8 +5,7 @@ import sys
 import fire
 from ots import Ots
 
-credentials_file = '~/.ots'
-path = os.path.expanduser(credentials_file)
+path = os.path.expanduser('~/.ots')
 
 if not os.path.exists(path):
     print(f"Please create {path} with username:api_key.")
