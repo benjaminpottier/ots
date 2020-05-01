@@ -14,6 +14,18 @@ class Ots(object):
         self.api_key = api_key
         self.base_uri = base_uri
         self.auth = HTTPBasicAuth(username=self.user,password=self.api_key)
+        
+    def _post(self, path, params={}):
+        try:
+            r = requests.post(
+                f"{self.base_uri}/{path}",
+                params=params,
+                auth=self.auth,
+            )
+        except:
+            raise
+        attrs = json.loads(r.text)
+        return attrs
 
     def create_secret(self, secret, email=None, ttl='3600', passphrase=None):
         """
@@ -28,17 +40,7 @@ class Ots(object):
             "ttl": ttl,
             "passphrase": passphrase,
         }
-
-        try:
-            r = requests.post(
-                f"{self.base_uri}/share",
-                params=params,
-                auth=self.auth,
-            )
-        except BaseException:
-            raise
-        attributes = json.loads(r.text)
-        return attributes
+        return self._post('share', params)
 
     def generate_secret(self, email=None, ttl='3600', passphrase=None):
         """
@@ -51,17 +53,7 @@ class Ots(object):
             "ttl": ttl,
             "passphrase": passphrase,
         }
-
-        try:
-            r = requests.post(
-                f"{self.base_uri}/generate",
-                params=params,
-                auth=self.auth,
-            )
-        except BaseException:
-            raise
-        attributes = json.loads(r.text)
-        return attributes
+        return self._post('generate', params)
 
     def retrieve_secret(self, secret_key, passphrase=None):
         """
@@ -71,17 +63,7 @@ class Ots(object):
         params = {
             "passphrase": passphrase
         }
-
-        try:
-            r = requests.post(
-                f"{self.base_uri}/secret/{secret_key}",
-                params=params,
-                auth=self.auth,
-            )
-        except BaseException:
-            raise
-        attributes = json.loads(r.text)
-        return attributes
+        return self._post(f"secret/{secret_key}", params)
 
     def retieve_metdata(self, metadata_key):
         """
