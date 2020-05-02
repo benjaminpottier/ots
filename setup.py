@@ -8,6 +8,6 @@ setup(
     author_email='benpottier@gmail.com',
     python_requires='>3.6',
     packages=['ots'],
-    install_requires=['fire'],
+    install_requires=['fire', 'requests'],
     scripts=['scripts/otscli.py']
 )
