@@ -11,7 +11,7 @@ sudo python3 setup.py install
 
 ## Setup
 
-Create an account at onetimesecret.com, then generate an API key.
+Create an account at onetimesecret.com and generate an API key.
 
 Store your user and key in `~/.ots` as `user:api_key` and set read-only permissions on the file.
 
