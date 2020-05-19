@@ -15,17 +15,14 @@ class Ots(object):
         self.base_uri = base_uri
         
     def _post(self, path, params={}):
-        try:
-            r = requests.post(
-                f"{self.base_uri}/{path}",
-                params=params,
-                auth=HTTPBasicAuth(
-                    username=self.user,
-                    password=self.api_key
-                )
+        r = requests.post(
+            f"{self.base_uri}/{path}",
+            params=params,
+            auth=HTTPBasicAuth(
+                username=self.user,
+                password=self.api_key
             )
-        except:
-            raise
+        )
         return json.loads(r.text)
 
     def create_secret(self, secret, email=None, ttl='3600', passphrase=None):
